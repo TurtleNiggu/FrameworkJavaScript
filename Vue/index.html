@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <title>Maqueta para MASTER en framework JS</title>
+
+        <!--Hoja de estilos-->
+        <link rel="stylesheet" href="C:\Users\Usuario 1\Desktop\2022\Frameworks JavaScript\Vue\css\styles.css"/>
+    </head>
+
+    <body>
+        <header id="header">
+            <div class="center">
+                <!--Logo-->
+                <div id="logo">
+                    <img src="C:\Users\Usuario 1\Desktop\2022\Frameworks JavaScript\Vue\recursos\vue.png" class="app-logo" alt="Logotipo"/>
+                    <span id="brand">
+                        <strong>Master</strong>Vue
+                    </span>
+                </div>
+
+                <!--Menu-->
+                <nav id="menu">
+                    <ul>
+                        <li>
+                            <a href="index.html">Inicio</a>
+                        </li>
+                        <li>
+                            <a href="blog.html">Blog</a>
+                        </li>
+                        <li>
+                            <a href="formulario.html">Formulario</a>
+                        </li>
+                        <li>
+                            <a href="">Pagina uno</a>
+                        </li>
+                        <li>
+                            <a href="">Pagina dos</a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <!--Limpiar flotados de CSS-->
+                <div class="clearfix"></div>
+
+            </div>
+        </header>
+
+        <div id="slider" class="slider-big">
+            <h1>Bienvenido al master de Vue de JavaScript</h1>
+            <a href="#" class="btn-white">Ir a blog</a>
+        </div>
+
+        <div class="clearfix"></div>
+
+        <div class="center">
+            <section id="content">
+                <h2 class="subheader">Ultimos articulos</h2>
+
+                <!--listado de articulos-->
+                <div id="articles">
+                <article class="article-item" id="article-template">
+                    <div class="image-wrap" >
+                        <img src="https://www.bunko.pet/__export/1611708686389/sites/debate/img/2021/01/26/9_datos_interesantes_sobre_los_perros_pug_que_tal_vez_no_sabxas.jpeg_204683662.jpeg" height="400px" alt="pug"/>
+                    </div>
+
+                    <h2>Articulo de prueba</h2>
+                    <span class="date">
+                        Hace 5 minutos
+                    </span>
+                    <a href="#">Leer mas</a>
+
+                    <div class="clearfix"></div>
+                </article>
+                <!--Aniadir articulos por js-->
+            </div>
+            </section>
+
+            <!--Script para clonar un div-->
+            <script type="text/javascript">
+                window.addEventListener("load", function(){
+                var template = document.getElementById("article-template");
+                var articles = document.getElementById("articles");
+
+                for(var i=1; i<=5; i++){
+                    var clonado = template.cloneNode(true);
+                    clonado.removeAttribute("id");
+                    var h2 = clonado.getElementsByTagName("h2")[0];
+                    h2.innerHTML = h2.textContent + ' ' + i;
+
+                    articles.appendChild(clonado);
+                }
+                })
+            </script>
+
+            <aside id="sidebar">
+                <div id="nav-blog" class="sidebar-item">
+                    <h3>Puedes hacer esto</h3>
+                    <a href="#" class="btn btn-success">Crear articulo</a>
+                </div>
+
+                <div id="search" class="sidebar-item">
+                    <h3>Buscador</h3>
+                    <p>Encuentra el articulo que buscas</p>
+                    <form>
+                        <input type="text" name="search"/>
+                        <input type="submit" name="buscar" value="Buscar" class="btn"/>
+                    </form>
+                </div>
+            </aside>
+
+            <div class="clearfix"></div>
+        </div>
+
+        <footer id="footer">
+            <div class="center">
+                <p>
+                    &copy; Master en frameworks para JavaScript de Angel Montanez
+                </p>
+            </div>
+        </footer>
+    </body>
+</html>
